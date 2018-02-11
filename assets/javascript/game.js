@@ -1,5 +1,5 @@
 // make an array of possible word choices
-var randomWord = [
+ var randomWord = [
   "corgi",
   "pug",
   "golden retriever",
@@ -25,14 +25,15 @@ var randomWord = [
 ];
 
 // create variables
-var wins = 0;
-var losses = 0;
+// var wins = 0;
+// var losses = 0;
 
 // Randomly chooses a choice from the options array. This is the Computer's guess.
-var computerGuess =
-  computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-document.getElementById("demo").innerHTML = "Hello JavaScript";
+// var computerGuess =
+ // computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
+// document.getElementById("demo").innerHTML = "Hello JavaScript";
 
 
 //window opens
@@ -57,3 +58,6 @@ document.getElementById("demo").innerHTML = "Hello JavaScript";
 
 
 
+document.querySelector('#bgnBtn').addEventListener('click', function() {
+  document.getElementById("caption").innerHTML = "Let's get Started!"
+});
