@@ -13,38 +13,52 @@
 
 
 
-    <div class="jumbotron text-center w-100">
-      <h1 class="">
-        Doggo Hangman!
-      </h1>
-    </div>
+  <div class="jumbotron text-center w-100">
+    <h1 class="">
+      Doggo Hangman!
+    </h1>
+  </div>
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header text-center">
-              <h3>Game Stats:</h3>
-            </div>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>Game Stats:</h3>
           </div>
-        </div>
-
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header text-center">
-              <h2 id="caption">Hangman!</h2>
-            </div>
-
+          <div class="card-body">
             <div class="card-text text-center">
-              <button id="bgnBtn">Start Game</button>
+              <h5>
+                wins:
+              </h5>
+              <h5>
+                losses:
+              </h5>
             </div>
           </div>
-
         </div>
       </div>
-    
+
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>Hangman!</h2>
+          </div>
+
+          <div class="card-text text-center">
+            <img id="hangman-image" src="./assets/images/hangman-start.png" alt="hangman start" class="my-3">
+
+            <div id="caption"></div>
+            <button id="bgnBtn" class="my-5">Begin Game</button>
+            <button id="startover" class="my-5">Start Over</button>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
 
     <div class="jumbotron-fluid bg-dark p-3 text-center fixed-bottom w-100">
       <h5>Copyright &copy; 2018 Daniel Foster</h5>
