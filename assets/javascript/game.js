@@ -1,28 +1,4 @@
 // make an array of possible word choices
- var randomWord = [
-  "corgi",
-  "pug",
-  "golden retriever",
-  "french bulldog",
-  "siberian husky",
-  "akita",
-  "boxer",
-  "pitbull",
-  "maltese",
-  "rottweiler",
-  "beagle",
-  "great dane",
-  "dachshund",
-  "chihuahua",
-  "chow chow",
-  "vizsla",
-  "border collie",
-  "australian shpepherd",
-  "newfoundland",
-  "great pyrenees",
-  "basset hound",
-  "boston terrier"
-];
 
 // create variables
 // var wins = 0;
@@ -31,14 +7,70 @@
 // Randomly chooses a choice from the options array. This is the Computer's guess.
 
 // var computerGuess =
- // computerChoices[Math.floor(Math.random() * computerChoices.length)];
+// computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
 // document.getElementById("demo").innerHTML = "Hello JavaScript";
-
 
 //window opens
 
 //click to start game
+
+// assign variables
+
+var wordBank = [
+  "corgi",
+  "pug",
+  "retriever",
+  "bulldog",
+  "husky",
+  "akita",
+  "boxer",
+  "pitbull",
+  "maltese",
+  "rottweiler",
+  "beagle",
+  "labrador",
+  "dachshund",
+  "chihuahua",
+  "chow",
+  "vizsla",
+  "collie",
+  "shepherd",
+  "newfoundland",
+  "malamute",
+  "hound",
+  "terrier"
+];
+
+// choose a random word from the array
+var randomChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
+console.log(randomChoice)
+
+// determine length of randomChoice string
+var rcLength = randomChoice.length;
+console.log(rcLength)
+
+// create variable underscore
+var underscore = [];
+console.log(underscore)
+// create new array of correct number of underscores
+var numUnderscore = () => {
+  for(var i = 0; i < rcLength.length; i++) {
+    underscore.push("_");
+  }
+return underscore;
+console.log(underscore);
+}
+
+//document.getElementById("startBtn").addEventListener("click", function() {
+ // document.getElementById("caption").innerHTML = "";
+//});
+
+//if (random.equals("corgi")) {
+//  document.getElementById("caption").innerHTML = "_ _ _ _ _";
+//} else if (random.equals("pug")) {
+// document.getElementById("caption").innerHTML = "_ _ _";
+//}
 
 //computer chooses random word from array
 
@@ -47,7 +79,7 @@
 //press a letter key to guess a letter
 
 //if guess is correct the letter will appear in the word
-//if guess is incorrect the letter will appear in a list of guessed letters
+//if guess is incorrect select the next image in the sequence of images
 //after a letter is guessed it will not deduct from your number of remaining guesses
 
 //after guessing all of the letters correctly you win
@@ -55,9 +87,3 @@
 
 //if too many incorrect letters are guessed you lose
 //after losing a loss is added to your losses column
-
-
-
-document.querySelector('#bgnBtn').addEventListener('click', function() {
-  document.getElementById("caption").innerHTML = "Let's get Started!"
-});

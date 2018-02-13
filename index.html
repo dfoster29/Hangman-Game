@@ -41,17 +41,21 @@
       </div>
 
       <div class="col-md-8">
-        <div class="card">
+        <div class="card mb-5">
           <div class="card-header text-center">
             <h2>Hangman!</h2>
           </div>
 
           <div class="card-text text-center">
-            <img id="hangman-image" src="./assets/images/hangman-start.png" alt="hangman start" class="my-3">
+            <img id="hangman-image" src="./assets/images/hangman-start.png" alt="hangman start" class="my-4">
 
-            <div id="caption"></div>
-            <button id="bgnBtn" class="my-5">Begin Game</button>
-            <button id="startover" class="my-5">Start Over</button>
+            <div>
+              <h1 id="caption">
+
+              </h1>
+            </div>
+
+            <button id="startBtn" class="my-5" onclick="fucntion()">Begin Game</button>
             
           </div>
         </div>
@@ -60,7 +64,7 @@
     </div>
 
 
-    <div class="jumbotron-fluid bg-dark p-3 text-center fixed-bottom w-100">
+    <div class="jumbotron-fluid bg-dark p-3 text-center fixed-bottom w-100 mt-5">
       <h5>Copyright &copy; 2018 Daniel Foster</h5>
     </div>
 
