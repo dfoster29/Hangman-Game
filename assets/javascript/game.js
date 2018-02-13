@@ -1,22 +1,4 @@
-// make an array of possible word choices
-
-// create variables
-// var wins = 0;
-// var losses = 0;
-
-// Randomly chooses a choice from the options array. This is the Computer's guess.
-
-// var computerGuess =
-// computerChoices[Math.floor(Math.random() * computerChoices.length)];
-
-// document.getElementById("demo").innerHTML = "Hello JavaScript";
-
-//window opens
-
-//click to start game
-
-// assign variables
-
+// create word bank array
 var wordBank = [
   "corgi",
   "pug",
@@ -42,7 +24,15 @@ var wordBank = [
   "terrier"
 ];
 
+// creat other variables
+var wins = 0;
+var losses = 0;
+var remGuesses = 10;
+var wrongLetters = [];
+var correctLetters = [];
 
+
+// select a random word from the word bank and store it in a variable
 randomChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
 console.log(randomChoice);
 
