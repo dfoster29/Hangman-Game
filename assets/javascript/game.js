@@ -42,28 +42,14 @@ var wordBank = [
   "terrier"
 ];
 
-// choose a random word from the array
-var randomChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
-console.log(randomChoice)
 
-// determine length of randomChoice string
-var rcLength = randomChoice.length;
-console.log(rcLength)
+randomChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
+console.log(randomChoice);
 
-// create variable underscore
-var underscore = [];
-console.log(underscore)
 // create new array of correct number of underscores
-var numUnderscore = () => {
-  for(var i = 0; i < rcLength.length; i++) {
-    underscore.push("_");
-  }
-return underscore;
-console.log(underscore);
-}
 
 //document.getElementById("startBtn").addEventListener("click", function() {
- // document.getElementById("caption").innerHTML = "";
+// document.getElementById("caption").innerHTML = "";
 //});
 
 //if (random.equals("corgi")) {
