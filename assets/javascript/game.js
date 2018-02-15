@@ -78,3 +78,20 @@ function newGame() {
   var wrongLetters = [];
   var correctLetters = [];
 }
+
+function checkGuess(button) {
+  console.dir(button);
+  // if button.textContent === anything in the pickedWord
+    // then run this to add success class
+    // button.className += " btn-success";
+  // else 
+    // button.className += " btn-danger"; 
+}
+
+
+var buttonRef = document.getElementById("buttons-list");
+
+buttonRef.addEventListener("click", function(event) {
+  console.dir(event.target.textContent);
+  checkGuess(event.target);
+});

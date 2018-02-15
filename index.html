@@ -26,9 +26,9 @@
 
   <div class="container" id="container-margin">
     <div class="row main-body">
-      <div class="col-md-4">
-        <div class="card mb-5">
-          <div class="card-header text-center">
+      <div class="col-md-5">
+        <div class="card mb-5" id="card">
+          <div class="card-header text-center" id="card-head">
             <h3>Game Stats:</h3>
           </div>
           <div class="card-body">
@@ -50,14 +50,14 @@
                 <span class="col-md-3" id="guesses-remaining">10</span>
               </h5>
               <div>
-                <button id="reset-button" class="my-2" onclick="resetGame()">Reset</button>
+                <button id="reset-button" class="btn-lg btn-danger my-2" onclick="resetGame()">Reset</button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-header text-center">
+        <div class="card" id="card">
+          <div class="card-header text-center" id="card-head">
             <h3>Info:</h3>
           </div>
           <div class="card-body">
@@ -84,9 +84,9 @@
 
       </div>
 
-      <div class="col-md-8">
-        <div class="card mb-5">
-          <div class="card-header text-center">
+      <div class="col-md-7">
+        <div class="card mb-5" id="card">
+          <div class="card-header text-center" id="card-head">
             <h2>Hangman!</h2>
           </div>
 
@@ -102,40 +102,40 @@
             </div>
 
 
-            <div class="my-4">
+            <div class="my-3" id="buttons-list">
               <div>
-                <button type="button" id="let-q" class="btn-lg my-2" onclick="">Q</button>
-                <button type="button" id="let-w" class="btn-lg my-2" onclick="">W</button>
-                <button type="button" id="let-e" class="btn-lg my-2" onclick="">E</button>
-                <button type="button" id="let-r" class="btn-lg my-2" onclick="">R</button>
-                <button type="button" id="let-t" class="btn-lg my-2" onclick="">T</button>
-                <button type="button" id="let-y" class="btn-lg my-2" onclick="">Y</button>
-                <button type="button" id="let-u" class="btn-lg my-2" onclick="">U</button>
-                <button type="button" id="let-i" class="btn-lg my-2" onclick="">I</button>
-                <button type="button" id="let-o" class="btn-lg my-2" onclick="">O</button>
-                <button type="button" id="let-p" class="btn-lg my-2" onclick="">P</button>
+                <button type="button" id="let-q" class="btn-lg my-1 letterBtn" onclick="">Q</button>
+                <button type="button" id="let-w" class="btn-lg my-1 letterBtn" onclick="">W</button>
+                <button type="button" id="let-e" class="btn-lg my-1 letterBtn" onclick="">E</button>
+                <button type="button" id="let-r" class="btn-lg my-1 letterBtn" onclick="">R</button>
+                <button type="button" id="let-t" class="btn-lg my-1 letterBtn" onclick="">T</button>
+                <button type="button" id="let-y" class="btn-lg my-1 letterBtn" onclick="">Y</button>
+                <button type="button" id="let-u" class="btn-lg my-1 letterBtn" onclick="">U</button>
+                <button type="button" id="let-i" class="btn-lg my-1 letterBtn" onclick="">I</button>
+                <button type="button" id="let-o" class="btn-lg my-1 letterBtn" onclick="">O</button>
+                <button type="button" id="let-p" class="btn-lg my-1 letterBtn" onclick="">P</button>
               </div>
 
               <div>
-                <button type="button" id="let-a" class="btn-lg my-2" onclick="">A</button>
-                <button type="button" id="let-s" class="btn-lg my-2" onclick="">S</button>
-                <button type="button" id="let-d" class="btn-lg my-2" onclick="">D</button>
-                <button type="button" id="let-f" class="btn-lg my-2" onclick="">F</button>
-                <button type="button" id="let-g" class="btn-lg my-2" onclick="">G</button>
-                <button type="button" id="let-h" class="btn-lg my-2" onclick="">H</button>
-                <button type="button" id="let-j" class="btn-lg my-2" onclick="">J</button>
-                <button type="button" id="let-k" class="btn-lg my-2" onclick="">K</button>
-                <button type="button" id="let-l" class="btn-lg my-2" onclick="">L</button>
+                <button type="button" id="let-a" class="btn-lg my-1 letterBtn" onclick="">A</button>
+                <button type="button" id="let-s" class="btn-lg my-1 letterBtn" onclick="">S</button>
+                <button type="button" id="let-d" class="btn-lg my-1 letterBtn" onclick="">D</button>
+                <button type="button" id="let-f" class="btn-lg my-1 letterBtn" onclick="">F</button>
+                <button type="button" id="let-g" class="btn-lg my-1 letterBtn" onclick="">G</button>
+                <button type="button" id="let-h" class="btn-lg my-1 letterBtn" onclick="">H</button>
+                <button type="button" id="let-j" class="btn-lg my-1 letterBtn" onclick="">J</button>
+                <button type="button" id="let-k" class="btn-lg my-1 letterBtn" onclick="">K</button>
+                <button type="button" id="let-l" class="btn-lg my-1 letterBtn" onclick="">L</button>
               </div>
 
               <div>
-                <button type="button" id="let-z" class="btn-lg my-2" onclick="">Z</button>
-                <button type="button" id="let-x" class="btn-lg my-2" onclick="">X</button>
-                <button type="button" id="let-c" class="btn-lg my-2" onclick="">C</button>
-                <button type="button" id="let-v" class="btn-lg my-2" onclick="">V</button>
-                <button type="button" id="let-b" class="btn-lg my-2" onclick="">B</button>
-                <button type="button" id="let-n" class="btn-lg my-2" onclick="">N</button>
-                <button type="button" id="let-m" class="btn-lg my-2" onclick="">M</button>
+                <button type="button" id="let-z" class="btn-lg my-1 letterBtn" onclick="">Z</button>
+                <button type="button" id="let-x" class="btn-lg my-1 letterBtn" onclick="">X</button>
+                <button type="button" id="let-c" class="btn-lg my-1 letterBtn" onclick="">C</button>
+                <button type="button" id="let-v" class="btn-lg my-1 letterBtn" onclick="">V</button>
+                <button type="button" id="let-b" class="btn-lg my-1 letterBtn" onclick="">B</button>
+                <button type="button" id="let-n" class="btn-lg my-1 letterBtn" onclick="">N</button>
+                <button type="button" id="let-m" class="btn-lg my-1 letterBtn" onclick="">M</button>
               </div>
 
             </div>
@@ -143,7 +143,7 @@
 
 
             <div>
-              <button id="start-button" class="my-1 mb-4" onclick="changeImage()">New Game</button>
+              <button id="start-button" class="my-1 btn-lg btn-primary mb-3" onclick="changeImage()">New Game</button>
             </div>
 
           </div>
