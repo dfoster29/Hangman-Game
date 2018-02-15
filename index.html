@@ -21,7 +21,7 @@
 
 
   <div class="container">
-    <div class="row">
+    <div class="row" class="main-body">
       <div class="col-md-4">
         <div class="card">
           <div class="card-header text-center">
@@ -48,6 +48,33 @@
             </div>
           </div>
         </div>
+
+        <div class="card">
+          <div class="card-header text-center">
+            <h3>Game Stats:</h3>
+          </div>
+          <div class="card-body">
+            <div class="card-text text-center">
+              <h5 class="row">
+                <p class="col-md-6">wins:</p>
+                <span class="col-md-3" id=wins>0</span>
+              </h5>
+              <h5 class="row">
+                <p class="col-md-6">losses:</p>
+                <span class="col-md-3" id=losses>0</span>
+              </h5>
+              <h5 class="row">
+                <p class="col-md-6">wrong letters:</p>
+                <span class="col-md-6" id="wrong-letters"></span>
+              </h5>
+              <h5 class="row">
+                <p class="col-md-6">guesses remaining:</p>
+                <span class="col-md-3" id="guesses-remaining">10</span>
+              </h5>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="col-md-8">
@@ -57,7 +84,9 @@
           </div>
 
           <div class="card-text text-center">
-            <img id="hangman-image" src="./assets/images/hangman-start.png" alt="hangman start" class="my-4">
+            <div id="slideshow">
+              <img alt="slideshow" src="./assets/images/hangman-start.png" id="hangman-image" onclick="changeImage()" class="my-4" />
+            </div>
 
             <div>
               <h1 id="caption">
@@ -65,14 +94,44 @@
               </h1>
             </div>
 
-            <button id="startBtn" class="my-5">Begin Game</button>
+            <button id="let-a" class="my-1" onclick="">A</button>
+            <button id="let-b" class="my-1" onclick="">B</button>
+            <button id="let-c" class="my-1" onclick="">C</button>
+            <button id="let-d" class="my-1" onclick="">D</button>
+            <button id="let-e" class="my-1" onclick="">E</button>
+            <button id="let-f" class="my-1" onclick="">F</button>
+            <button id="let-g" class="my-1" onclick="">G</button>
+            <button id="let-h" class="my-1" onclick="">H</button>
+            <button id="let-i" class="my-1" onclick="">I</button>
+            <button id="let-j" class="my-1" onclick="">J</button>
+            <button id="let-k" class="my-1" onclick="">K</button>
+            <button id="let-l" class="my-1" onclick="">L</button>
+            <button id="let-m" class="my-1" onclick="">M</button>
+            <button id="let-n" class="my-1" onclick="">N</button>
+            <button id="let-o" class="my-1" onclick="">O</button>
+            <button id="let-p" class="my-1" onclick="">P</button>
+            <button id="let-q" class="my-1" onclick="">Q</button>
+            <button id="let-r" class="my-1" onclick="">R</button>
+            <button id="let-s" class="my-1" onclick="">S</button>
+            <button id="let-t" class="my-1" onclick="">T</button>
+            <button id="let-u" class="my-1" onclick="">U</button>
+            <button id="let-v" class="my-1" onclick="">V</button>
+            <button id="let-w" class="my-1" onclick="">W</button>
+            <button id="let-x" class="my-1" onclick="">X</button>
+            <button id="let-y" class="my-1" onclick="">Y</button>
+            <button id="let-z" class="my-1" onclick="">Z</button>
+           
 
-          </div>
+            <div>
+              <button id="start-button" class="my-5" onclick="changeImage()">Begin Game</button>
+              <button id="reset-button" class="my-5" onclick="changeImage()">Reset</button>
+            </div>
+          </button>
         </div>
       </div>
     </div>
 
-    <div class="jumbotron-fluid bg-dark p-3 text-center fixed-bottom w-100 mt-5">
+    <div class="jumbotron-fluid bg-dark p-3 text-center fixed-bottom w-100">
       <h5>Copyright &copy; 2018 Daniel Foster</h5>
     </div>
 

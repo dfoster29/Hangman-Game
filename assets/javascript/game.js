@@ -27,14 +27,10 @@ var wordBank = [
 // creat other variables
 var wins = 0;
 var losses = 0;
-var remGuesses = 10;
-var wrongLetters = [];
-var correctLetters = [];
 
-
-// select a random word from the word bank and store it in a variable
-randomChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
-console.log(randomChoice);
+// computer selects a random word from the word bank array and stores it in a variable
+wordChoice = wordBank[Math.floor(Math.random() * wordBank.length)];
+console.log(wordChoice);
 
 // create new array of correct number of underscores
 
@@ -48,7 +44,20 @@ console.log(randomChoice);
 // document.getElementById("caption").innerHTML = "_ _ _";
 //}
 
-//computer chooses random word from array
+// get image to change when incorrect letter is selected
+var imgs = [
+  "./assets/images/hangman-1.png",
+  "./assets/images/hangman-2.png",
+  "./assets/images/hangman-3.png",
+  "./assets/images/hangman-4.png",
+  "./assets/images/hangman-5.png",
+  "./assets/images/hangman-6.png"
+];
+
+function changeImage() {
+  document.getElementById("hangman-image").src = imgs[0];
+  imgs.push(imgs.shift());
+}
 
 //blank spaces appear the length of the word
 
@@ -63,3 +72,9 @@ console.log(randomChoice);
 
 //if too many incorrect letters are guessed you lose
 //after losing a loss is added to your losses column
+
+function newGame() {
+  var remGuesses = 10;
+  var wrongLetters = [];
+  var correctLetters = [];
+}
