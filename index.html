@@ -43,7 +43,7 @@
               </h5>
               <h5 class="row">
                 <p class="col-md-6">guesses remaining:</p>
-                <span class="col-md-3" id="guesses-remaining">10</span>
+                <span class="col-md-3" id="guesses-remaining">6</span>
               </h5>
               <div>
                 <button id="reset-button" class="btn-lg btn-danger my-2" onclick="resetGame()">Reset</button>
@@ -93,38 +93,38 @@
 
             <div class="my-3" id="buttons-list">
               <div>
-                <button type="button" id="let-q" class="btn-lg my-1 letterBtn" onclick="letterButton">Q</button>
-                <button type="button" id="let-w" class="btn-lg my-1 letterBtn" onclick="letterButton">W</button>
-                <button type="button" id="let-e" class="btn-lg my-1 letterBtn" onclick="letterButton">E</button>
-                <button type="button" id="let-r" class="btn-lg my-1 letterBtn" onclick="letterButton">R</button>
-                <button type="button" id="let-t" class="btn-lg my-1 letterBtn" onclick="letterButton">T</button>
-                <button type="button" id="let-y" class="btn-lg my-1 letterBtn" onclick="letterButton">Y</button>
-                <button type="button" id="let-u" class="btn-lg my-1 letterBtn" onclick="letterButton">U</button>
-                <button type="button" id="let-i" class="btn-lg my-1 letterBtn" onclick="letterButton">I</button>
-                <button type="button" id="let-o" class="btn-lg my-1 letterBtn" onclick="letterButton">O</button>
-                <button type="button" id="let-p" class="btn-lg my-1 letterBtn" onclick="letterButton">P</button>
+                <button type="button" id="let-q" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">Q</button>
+                <button type="button" id="let-w" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">W</button>
+                <button type="button" id="let-e" class="btn-lg my-1 letterBtn button-class" onclick=checkGuess>E</button>
+                <button type="button" id="let-r" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">R</button>
+                <button type="button" id="let-t" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">T</button>
+                <button type="button" id="let-y" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">Y</button>
+                <button type="button" id="let-u" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">U</button>
+                <button type="button" id="let-i" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">I</button>
+                <button type="button" id="let-o" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">O</button>
+                <button type="button" id="let-p" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">P</button>
               </div>
 
               <div>
-                <button type="button" id="let-a" class="btn-lg my-1 letterBtn" onclick="letterButton">A</button>
-                <button type="button" id="let-s" class="btn-lg my-1 letterBtn" onclick="letterButton">S</button>
-                <button type="button" id="let-d" class="btn-lg my-1 letterBtn" onclick="letterButton">D</button>
-                <button type="button" id="let-f" class="btn-lg my-1 letterBtn" onclick="letterButton">F</button>
-                <button type="button" id="let-g" class="btn-lg my-1 letterBtn" onclick="letterButton">G</button>
-                <button type="button" id="let-h" class="btn-lg my-1 letterBtn" onclick="letterButton">H</button>
-                <button type="button" id="let-j" class="btn-lg my-1 letterBtn" onclick="letterButton">J</button>
-                <button type="button" id="let-k" class="btn-lg my-1 letterBtn" onclick="letterButton">K</button>
-                <button type="button" id="let-l" class="btn-lg my-1 letterBtn" onclick="letterButton">L</button>
+                <button type="button" id="let-a" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">A</button>
+                <button type="button" id="let-s" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">S</button>
+                <button type="button" id="let-d" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">D</button>
+                <button type="button" id="let-f" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">F</button>
+                <button type="button" id="let-g" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">G</button>
+                <button type="button" id="let-h" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">H</button>
+                <button type="button" id="let-j" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">J</button>
+                <button type="button" id="let-k" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">K</button>
+                <button type="button" id="let-l" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">L</button>
               </div>
 
               <div>
-                <button type="button" id="let-z" class="btn-lg my-1 letterBtn" onclick="letterButton">Z</button>
-                <button type="button" id="let-x" class="btn-lg my-1 letterBtn" onclick="letterButton">X</button>
-                <button type="button" id="let-c" class="btn-lg my-1 letterBtn" onclick="letterButton">C</button>
-                <button type="button" id="let-v" class="btn-lg my-1 letterBtn" onclick="letterButton">V</button>
-                <button type="button" id="let-b" class="btn-lg my-1 letterBtn" onclick="letterButton">B</button>
-                <button type="button" id="let-n" class="btn-lg my-1 letterBtn" onclick="letterButton">N</button>
-                <button type="button" id="let-m" class="btn-lg my-1 letterBtn" onclick="letterButton">M</button>
+                <button type="button" id="let-z" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">Z</button>
+                <button type="button" id="let-x" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">X</button>
+                <button type="button" id="let-c" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">C</button>
+                <button type="button" id="let-v" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">V</button>
+                <button type="button" id="let-b" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">B</button>
+                <button type="button" id="let-n" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">N</button>
+                <button type="button" id="let-m" class="btn-lg my-1 letterBtn button-class" onclick="checkGuess()">M</button>
               </div>
 
             </div>

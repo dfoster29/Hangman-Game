@@ -86,16 +86,17 @@ function myFunction() {
       console.dir(button);
 
       if (
-        buttonRef.textContent ===
+        buttonRef.textContent === 
         // if button.textContent === anything in the pickedWord
         // then run this to add success class
 
         //document.getElementById("MyElement").classList.add('btn-success')
 
-        // button.className += " btn-success";
+        button.className += " btn-success";
+
         document.getElementById("MyElement").classList.add("btn-danger")
       )
-        // button.className += " btn-danger";
+        button.className += " btn-danger";
 
         // function changeImage() {
         //  document.getElementById("hangman-image").src = imgs[0];
@@ -111,3 +112,67 @@ function myFunction() {
     }
   });
 }
+
+//---------------------------------------------------------
+
+
+var buttonRef = document.getElementById("buttons-list");
+
+function checkGuess(button) {
+  // capture event key (letter pressed)
+
+  buttonRef.addEventListener("click", function(event) {
+    function letterBtn() {
+    
+  // if (guessedLetters.indexOf(letterGuessed) === -1)
+  if (guessedLetters.indexOf(letterGuessed) === -1);
+
+  // Run rest of game
+  // push guessedLetter into guessedLetters array
+  for (i = 0; i < pickedWordArray.length; i++) {
+    if (guessedLetter[i] === arr[i]) pickedWordPlaceholder.push(guessedLetter);
+
+    else pickedWordPlaceholder.push("_");
+  
+  // loop over pickedWordArray
+  for (i = 0; i < pickedWordArray.length; i++) {
+
+  // if guessedLetter === arr[i]
+  if (guessedLetter === arr[i]) 
+
+  // replace placeholder[i] with guessedLetter
+  placeholder[i].push(guessedLetter);
+  document.getElementById("MyElement").classList.add("btn-success");
+
+  // if placedholderArray.indexOf(guessedLetter) === -1
+  if (placeholderArray.indexOf(guessedLetter) === -1) document.getElementById("hangman-image").src = imgs[0];
+  imgs.push(imgs.shift())
+  document.getElementById("MyElement").classList.add("btn-danger");
+
+  // then it's a wrong guess
+  
+  // decrement guessesLeft
+  guessesLeft --;
+
+  // check guessesLeft up against 0
+  if (guessesLeft === 0);
+
+  // if yes, you lose
+  alert("you lose!");
+
+  // check to see if placeholderArray.join('') === pickedWordArray.join('')
+  if (placeholderArray.join(" ") === pickedWordArray.join(" "));
+
+  // if yes, you win!
+  alert("you win!");
+
+  // else alert / write to DOM that user already guessed that letter
+  else; {
+(alert("you already guessed that letter")
+  )
+}}
+
+
+
+
+//----------------------------------------------
