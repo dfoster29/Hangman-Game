@@ -42,10 +42,6 @@
                 <span class="col-md-3" id=losses>0</span>
               </h5>
               <h5 class="row">
-                <p class="col-md-6">wrong letters:</p>
-                <span class="col-md-6" id="wrong-letters"></span>
-              </h5>
-              <h5 class="row">
                 <p class="col-md-6">guesses remaining:</p>
                 <span class="col-md-3" id="guesses-remaining">10</span>
               </h5>
@@ -58,25 +54,18 @@
 
         <div class="card" id="card">
           <div class="card-header text-center" id="card-head">
-            <h3>Info:</h3>
+            <h3>Rules:</h3>
           </div>
           <div class="card-body">
             <div class="card-text text-center">
-              <h5 class="row">
-                <p class="col-md-6">wins:</p>
-                <span class="col-md-3" id=wins>0</span>
+              <h5 class="my-4">
+                How well do you know your breeds of dogs?!
               </h5>
-              <h5 class="row">
-                <p class="col-md-6">losses:</p>
-                <span class="col-md-3" id=losses>0</span>
+              <h5 class="my-4">
+                Try your luck guessing the correct breed!
               </h5>
-              <h5 class="row">
-                <p class="col-md-6">wrong letters:</p>
-                <span class="col-md-6" id="wrong-letters"></span>
-              </h5>
-              <h5 class="row">
-                <p class="col-md-6">guesses remaining:</p>
-                <span class="col-md-3" id="guesses-remaining">10</span>
+              <h5 class="my-4">
+                Press "new game" to begin!
               </h5>
             </div>
           </div>
@@ -96,46 +85,46 @@
             </div>
 
             <div>
-              <h1 class="my=4" id="caption">
-                * press "New Game" to start *
+              <h1 class="my=4" id="picked-word">
+
               </h1>
             </div>
 
 
             <div class="my-3" id="buttons-list">
               <div>
-                <button type="button" id="let-q" class="btn-lg my-1 letterBtn" onclick="">Q</button>
-                <button type="button" id="let-w" class="btn-lg my-1 letterBtn" onclick="">W</button>
-                <button type="button" id="let-e" class="btn-lg my-1 letterBtn" onclick="">E</button>
-                <button type="button" id="let-r" class="btn-lg my-1 letterBtn" onclick="">R</button>
-                <button type="button" id="let-t" class="btn-lg my-1 letterBtn" onclick="">T</button>
-                <button type="button" id="let-y" class="btn-lg my-1 letterBtn" onclick="">Y</button>
-                <button type="button" id="let-u" class="btn-lg my-1 letterBtn" onclick="">U</button>
-                <button type="button" id="let-i" class="btn-lg my-1 letterBtn" onclick="">I</button>
-                <button type="button" id="let-o" class="btn-lg my-1 letterBtn" onclick="">O</button>
-                <button type="button" id="let-p" class="btn-lg my-1 letterBtn" onclick="">P</button>
+                <button type="button" id="let-q" class="btn-lg my-1 letterBtn" onclick="letterButton">Q</button>
+                <button type="button" id="let-w" class="btn-lg my-1 letterBtn" onclick="letterButton">W</button>
+                <button type="button" id="let-e" class="btn-lg my-1 letterBtn" onclick="letterButton">E</button>
+                <button type="button" id="let-r" class="btn-lg my-1 letterBtn" onclick="letterButton">R</button>
+                <button type="button" id="let-t" class="btn-lg my-1 letterBtn" onclick="letterButton">T</button>
+                <button type="button" id="let-y" class="btn-lg my-1 letterBtn" onclick="letterButton">Y</button>
+                <button type="button" id="let-u" class="btn-lg my-1 letterBtn" onclick="letterButton">U</button>
+                <button type="button" id="let-i" class="btn-lg my-1 letterBtn" onclick="letterButton">I</button>
+                <button type="button" id="let-o" class="btn-lg my-1 letterBtn" onclick="letterButton">O</button>
+                <button type="button" id="let-p" class="btn-lg my-1 letterBtn" onclick="letterButton">P</button>
               </div>
 
               <div>
-                <button type="button" id="let-a" class="btn-lg my-1 letterBtn" onclick="">A</button>
-                <button type="button" id="let-s" class="btn-lg my-1 letterBtn" onclick="">S</button>
-                <button type="button" id="let-d" class="btn-lg my-1 letterBtn" onclick="">D</button>
-                <button type="button" id="let-f" class="btn-lg my-1 letterBtn" onclick="">F</button>
-                <button type="button" id="let-g" class="btn-lg my-1 letterBtn" onclick="">G</button>
-                <button type="button" id="let-h" class="btn-lg my-1 letterBtn" onclick="">H</button>
-                <button type="button" id="let-j" class="btn-lg my-1 letterBtn" onclick="">J</button>
-                <button type="button" id="let-k" class="btn-lg my-1 letterBtn" onclick="">K</button>
-                <button type="button" id="let-l" class="btn-lg my-1 letterBtn" onclick="">L</button>
+                <button type="button" id="let-a" class="btn-lg my-1 letterBtn" onclick="letterButton">A</button>
+                <button type="button" id="let-s" class="btn-lg my-1 letterBtn" onclick="letterButton">S</button>
+                <button type="button" id="let-d" class="btn-lg my-1 letterBtn" onclick="letterButton">D</button>
+                <button type="button" id="let-f" class="btn-lg my-1 letterBtn" onclick="letterButton">F</button>
+                <button type="button" id="let-g" class="btn-lg my-1 letterBtn" onclick="letterButton">G</button>
+                <button type="button" id="let-h" class="btn-lg my-1 letterBtn" onclick="letterButton">H</button>
+                <button type="button" id="let-j" class="btn-lg my-1 letterBtn" onclick="letterButton">J</button>
+                <button type="button" id="let-k" class="btn-lg my-1 letterBtn" onclick="letterButton">K</button>
+                <button type="button" id="let-l" class="btn-lg my-1 letterBtn" onclick="letterButton">L</button>
               </div>
 
               <div>
-                <button type="button" id="let-z" class="btn-lg my-1 letterBtn" onclick="">Z</button>
-                <button type="button" id="let-x" class="btn-lg my-1 letterBtn" onclick="">X</button>
-                <button type="button" id="let-c" class="btn-lg my-1 letterBtn" onclick="">C</button>
-                <button type="button" id="let-v" class="btn-lg my-1 letterBtn" onclick="">V</button>
-                <button type="button" id="let-b" class="btn-lg my-1 letterBtn" onclick="">B</button>
-                <button type="button" id="let-n" class="btn-lg my-1 letterBtn" onclick="">N</button>
-                <button type="button" id="let-m" class="btn-lg my-1 letterBtn" onclick="">M</button>
+                <button type="button" id="let-z" class="btn-lg my-1 letterBtn" onclick="letterButton">Z</button>
+                <button type="button" id="let-x" class="btn-lg my-1 letterBtn" onclick="letterButton">X</button>
+                <button type="button" id="let-c" class="btn-lg my-1 letterBtn" onclick="letterButton">C</button>
+                <button type="button" id="let-v" class="btn-lg my-1 letterBtn" onclick="letterButton">V</button>
+                <button type="button" id="let-b" class="btn-lg my-1 letterBtn" onclick="letterButton">B</button>
+                <button type="button" id="let-n" class="btn-lg my-1 letterBtn" onclick="letterButton">N</button>
+                <button type="button" id="let-m" class="btn-lg my-1 letterBtn" onclick="letterButton">M</button>
               </div>
 
             </div>
@@ -143,7 +132,7 @@
 
 
             <div>
-              <button id="start-button" class="my-1 btn-lg btn-primary mb-3" onclick="changeImage()">New Game</button>
+              <button id="start-button" class="my-1 btn-lg btn-primary mb-3" onclick="newGame">New Game</button>
             </div>
 
           </div>
@@ -154,7 +143,7 @@
         <h5>Copyright &copy; 2018 Daniel Foster</h5>
       </div>
 
-      <script src="./assets/javascript/game.js"></script>
+      <script src="./assets/javascript/gametwo.js"></script>
 
 </body>
 
