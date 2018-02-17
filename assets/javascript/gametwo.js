@@ -36,10 +36,10 @@ var imgs = [
 
 // any references to HTML DOM Elements (reset button, area for writing stats, letter blanks)
 // wins/losses
-var wins = [];
-var losses = [];
+var wins = 0;
+var losses = 0;
 var guesses = 6;
-var pickedWordPlaceHolder = [];
+var pickedWordPlaceholder = [];
 var guessedLetters = [];
 var pickedWordArray = [];
 var pickedWord = "";
@@ -54,7 +54,9 @@ function newGame() {
 
   // array for guessedLetters
   guessedLetters = [];
-  // clear out existing DOM content from previous game
+
+  document.getElementById("picked-word").textContent = "";
+  resetButtons();
 
   // pick our word at random from the wordBank
   pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
@@ -65,8 +67,11 @@ function newGame() {
 
   // for loop over pickedWordArray, at each iteration, check IF pickedWordArray[i] === " ", then push in a " " to pickedWordPlaceholder, else push a "_"
   for (i = 0; i < pickedWordArray.length; i++) {
-    if (pickedWordArray[i] === " ") pickedWordPlaceholder.push(" ");
-    else pickedWordPlaceholder.push("_");
+    if (pickedWordArray[i] === " ") {
+      pickedWordPlaceholder.push(" ");
+    } else {
+      pickedWordPlaceholder.push("_");
+    }
   }
   var joinedPlaceholder = pickedWordPlaceholder.join(" ");
   // write placeholder array to DOM
@@ -79,10 +84,12 @@ var buttonRef = document.getElementById("buttons-list");
 
 buttonRef.addEventListener("click", function(event) {
   // event.target will be the particular button you clicked
-  console.log(event.target);
+  console.dir(event.target);
   var buttonClicked = event.target;
   // execute checkGuess function and pass in the button you selected (will be handled above)
-  checkGuess(buttonClicked);
+  if (buttonClicked.nodeName === "BUTTON") {
+    checkGuess(buttonClicked);
+  }
 });
 
 //---------------------------------
@@ -91,43 +98,61 @@ var buttonRef = document.getElementById("buttons-list");
 function checkGuess(button) {
   // capture event key (letter pressed)
   console.dir(button);
-  var buttonPicked = button;
-  guessedLetters = [];
 
   //the letter guessed is equal to the text content of the button clicked
-  var letterGuessed = button.textContent;
+  var letterGuessed = button.textContent.toLowerCase();
 
   //check to see if the letter guessed is present in the pickedWord
   //push this letter into the letterGuessed array
+
   //if the letter is present in the word then push it into the placeholder array
   //change the class of the button pressed to btn-success
-  document.getElementById("MyElement").classList.add("btn-success");
+
   //write the letter to the dom in the correct location
   //if the letter isn't in the word then change the button class to btn-danger
-  document.getElementById("MyElement").classList.add("btn-danger");
   //switch to the next image in the images array
-  document.getElementById("hangman-image").src = imgs[0];
-  imgs.push(imgs.shift());
+
   // -1 remaining guesses
   // once zero guesses remaining then you lose
   //once the placeholder array matches the pickedWord you win
 
   // if (guessedLetters.indexOf(letterGuessed) === -1)
-  if (letterGuessed.indexOf(letterGuessed) === -1) {
+  if (guessedLetters.indexOf(letterGuessed) === -1) {
     // Run rest of game
     // push guessedLetter into guessedLetters array
-    letterGuessed.push(letterGuessed);
-    console.log(letterGuessed);
-  }
-  // loop over pickedWordArray
-  for (i = 0; i < pickedWordArray.length; i++) {
-    // if guessedLetter === arr[i]
-    if (guessedLetters === pickedWordArray[i]) {
-      // replace placeholder[i] with guessedLetter
-      pickedWordPlaceholder[i].push(guessedLetters);
+    guessedLetters.push(letterGuessed);
 
-      document.getElementById("picked-word").innerHTML = pickedWordArray;
+    for (i = 0; i < pickedWordArray.length; i++) {
+      // if guessedLetter === arr[i]
+      if (letterGuessed === pickedWordArray[i]) {
+        // replace placeholder[i] with guessedLetter
+        pickedWordPlaceholder[i] = letterGuessed;
+        console.log(pickedWordPlaceholder);
+        button.classList.add("btn-success");
+      }
     }
+    if (pickedWordPlaceholder.indexOf(letterGuessed) === -1) {
+      button.classList.add("btn-danger");
+      document.getElementById("hangman-image").src = imgs[0];
+      imgs.push(imgs.shift());
+      guesses--;
+    }
+    document.getElementById(
+      "picked-word"
+    ).innerHTML = pickedWordPlaceholder.join(" ");
+    if (guesses === 0) {
+      losses++;
+      document.getElementById("losses").textContent=losses;
+      
+      // you lose
+    }
+    if (pickedWordPlaceholder.join("") === pickedWordArray.join("")) {
+      wins++;
+      document.getElementById("wins").textContent=wins;
+      
+      // you win
+    }
+
   }
 }
 
@@ -135,23 +160,13 @@ function checkGuess(button) {
 
 function resetButtons() {
   var letterButtons = document.getElementsByClassName("button-class");
-
+  console.log("hit");
   for (var i = 0; i < letterButtons.length; i++) {
     letterButtons[i].classList.remove("btn-success");
     letterButtons[i].classList.remove("btn-danger");
   }
 }
 // reset GAME FUNCTION
-document.getElementById("reset-button").addEventListener("click", resetGame);
+document.getElementById("reset-button").addEventListener("click", newGame);
 
-function resetGame() {
-  // reset guessesLeft to 6
-  // declare/reset pickedWord Placeholder array
-  var pickedWordPlaceholder = [];
-
-  // array for guessedLetters
-  var guessedLetters = [];
-
-  var wins = [];
-  var losses = [];
-}
+newGame();
