@@ -48,6 +48,7 @@ var pickedWord = "";
 document.getElementById("start-button").addEventListener("click", newGame);
 function newGame() {
   // reset guessesLeft to 6
+  document.getElementById("hangman-image").src = "./assets/images/hangman-start.png";
   guesses = 6;
   // declare/reset pickedWord Placeholder array
   pickedWordPlaceholder = [];
@@ -149,7 +150,7 @@ function checkGuess(button) {
     if (pickedWordPlaceholder.join("") === pickedWordArray.join("")) {
       wins++;
       document.getElementById("wins").textContent=wins;
-      
+
       // you win
     }
 
