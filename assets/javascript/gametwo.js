@@ -94,41 +94,42 @@ function checkGuess(button) {
   var buttonPicked = button;
   guessedLetters = [];
 
-//the letter guessed is equal to the text content of the button clicked
+  //the letter guessed is equal to the text content of the button clicked
   var letterGuessed = button.textContent;
 
   //check to see if the letter guessed is present in the pickedWord
   //push this letter into the letterGuessed array
   //if the letter is present in the word then push it into the placeholder array
   //change the class of the button pressed to btn-success
+  document.getElementById("MyElement").classList.add("btn-success");
   //write the letter to the dom in the correct location
   //if the letter isn't in the word then change the button class to btn-danger
+  document.getElementById("MyElement").classList.add("btn-danger");
   //switch to the next image in the images array
+  document.getElementById("hangman-image").src = imgs[0];
+  imgs.push(imgs.shift());
   // -1 remaining guesses
   // once zero guesses remaining then you lose
   //once the placeholder array matches the pickedWord you win
 
-
-  
   // if (guessedLetters.indexOf(letterGuessed) === -1)
   if (letterGuessed.indexOf(letterGuessed) === -1) {
-    
-      // Run rest of game
-      // push guessedLetter into guessedLetters array
-      letterGuessed.push(letterGuessed);
-      console.log(letterGuessed);
+    // Run rest of game
+    // push guessedLetter into guessedLetters array
+    letterGuessed.push(letterGuessed);
+    console.log(letterGuessed);
+  }
+  // loop over pickedWordArray
+  for (i = 0; i < pickedWordArray.length; i++) {
+    // if guessedLetter === arr[i]
+    if (guessedLetters === pickedWordArray[i]) {
+      // replace placeholder[i] with guessedLetter
+      pickedWordPlaceholder[i].push(guessedLetters);
+
+      document.getElementById("picked-word").innerHTML = pickedWordArray;
     }
-    // loop over pickedWordArray
-    for (i = 0; i < pickedWordArray.length; i++) {
-      // if guessedLetter === arr[i]
-      if (guessedLetters === pickedWordArray[i]) {
-        // replace placeholder[i] with guessedLetter
-        pickedWordPlaceholder[i].push(guessedLetters);
-      
-      document.getElementById("picked-word").innerHTML = pickedWordArray
-      }
-    }
-  };
+  }
+}
 
 //----------------------------------------
 
