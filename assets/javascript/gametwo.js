@@ -48,8 +48,10 @@ var pickedWord = "";
 document.getElementById("start-button").addEventListener("click", newGame);
 function newGame() {
   // reset guessesLeft to 6
-  document.getElementById("hangman-image").src = "./assets/images/hangman-start.png";
+  document.getElementById("hangman-image").src =
+    "./assets/images/hangman-start.png";
   guesses = 6;
+  document.getElementById("guesses-remaining").textContent = guesses;
   // declare/reset pickedWord Placeholder array
   pickedWordPlaceholder = [];
 
@@ -61,7 +63,7 @@ function newGame() {
 
   // pick our word at random from the wordBank
   pickedWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-  console.log(pickedWord); //randomly picked word from wordBank
+  //console.log(pickedWord); //randomly picked word from wordBank
 
   // split pickedWord into an array
   pickedWordArray = pickedWord.split("");
@@ -85,7 +87,7 @@ var buttonRef = document.getElementById("buttons-list");
 
 buttonRef.addEventListener("click", function(event) {
   // event.target will be the particular button you clicked
-  console.dir(event.target);
+  // console.dir(event.target);
   var buttonClicked = event.target;
   // execute checkGuess function and pass in the button you selected (will be handled above)
   if (buttonClicked.nodeName === "BUTTON") {
@@ -98,7 +100,7 @@ var buttonRef = document.getElementById("buttons-list");
 
 function checkGuess(button) {
   // capture event key (letter pressed)
-  console.dir(button);
+  // console.dir(button);
 
   //the letter guessed is equal to the text content of the button clicked
   var letterGuessed = button.textContent.toLowerCase();
@@ -128,32 +130,50 @@ function checkGuess(button) {
       if (letterGuessed === pickedWordArray[i]) {
         // replace placeholder[i] with guessedLetter
         pickedWordPlaceholder[i] = letterGuessed;
-        console.log(pickedWordPlaceholder);
+        // console.log(pickedWordPlaceholder);
         button.classList.add("btn-success");
       }
     }
     if (pickedWordPlaceholder.indexOf(letterGuessed) === -1) {
       button.classList.add("btn-danger");
-      document.getElementById("hangman-image").src = imgs[0];
-      imgs.push(imgs.shift());
       guesses--;
+      document.getElementById("guesses-remaining").textContent = guesses;
     }
-    document.getElementById(
-      "picked-word"
-    ).innerHTML = pickedWordPlaceholder.join(" ");
+    document.getElementById("picked-word").innerHTML = pickedWordPlaceholder.join(" ");
     if (guesses === 0) {
       losses++;
-      document.getElementById("losses").textContent=losses;
-      
+      document.getElementById("losses").textContent = losses;
       // you lose
     }
     if (pickedWordPlaceholder.join("") === pickedWordArray.join("")) {
       wins++;
-      document.getElementById("wins").textContent=wins;
-
+      document.getElementById("wins").textContent = wins;
       // you win
     }
-
+    if (guesses === 5) {
+      document.getElementById("hangman-image").src =
+        "./assets/images/hangman-1.png";
+    }
+    if (guesses === 4) {
+      document.getElementById("hangman-image").src =
+        "./assets/images/hangman-2.png";
+    }
+    if (guesses === 3) {
+      document.getElementById("hangman-image").src =
+        "./assets/images/hangman-3.png";
+    }
+    if (guesses === 2) {
+      document.getElementById("hangman-image").src =
+        "./assets/images/hangman-4.png";
+    }
+    if (guesses === 1) {
+      document.getElementById("hangman-image").src =
+        "./assets/images/hangman-5.png";
+    }
+    if (guesses === 0) {
+      document.getElementById("hangman-image").src =
+        "./assets/images/hangman-6.png";
+    }
   }
 }
 
@@ -161,7 +181,7 @@ function checkGuess(button) {
 
 function resetButtons() {
   var letterButtons = document.getElementsByClassName("button-class");
-  console.log("hit");
+  //console.log("hit");
   for (var i = 0; i < letterButtons.length; i++) {
     letterButtons[i].classList.remove("btn-success");
     letterButtons[i].classList.remove("btn-danger");
