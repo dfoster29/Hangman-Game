@@ -25,15 +25,6 @@ var wordBank = [
   "terrier"
 ];
 
-var imgs = [
-  "./assets/images/hangman-1.png",
-  "./assets/images/hangman-2.png",
-  "./assets/images/hangman-3.png",
-  "./assets/images/hangman-4.png",
-  "./assets/images/hangman-5.png",
-  "./assets/images/hangman-6.png"
-];
-
 // any references to HTML DOM Elements (reset button, area for writing stats, letter blanks)
 // wins/losses
 var wins = 0;
@@ -188,6 +179,11 @@ function resetButtons() {
   }
 }
 // reset GAME FUNCTION
-document.getElementById("reset-button").addEventListener("click", newGame);
-
+document.getElementById("reset-button").addEventListener("click", newGame, resetGame);
+function resetGame() {
+  wins = 0;
+  losses = 0;
+  document.getElementById("wins").textContent = wins;
+  document.getElementById("losses").textContent = losses;
+}
 newGame();
