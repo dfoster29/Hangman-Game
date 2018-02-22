@@ -37,6 +37,7 @@ var pickedWord = "";
 
 // NEW GAME FUNCTION
 document.getElementById("start-button").addEventListener("click", newGame);
+
 function newGame() {
   // reset guessesLeft to 6
   document.getElementById("hangman-image").src =
@@ -76,7 +77,7 @@ function newGame() {
 
 var buttonRef = document.getElementById("buttons-list");
 
-buttonRef.addEventListener("click", function(event) {
+buttonRef.addEventListener("click", function (event) {
   // event.target will be the particular button you clicked
   // console.dir(event.target);
   var buttonClicked = event.target;
@@ -96,21 +97,7 @@ function checkGuess(button) {
   //the letter guessed is equal to the text content of the button clicked
   var letterGuessed = button.textContent.toLowerCase();
 
-  //check to see if the letter guessed is present in the pickedWord
-  //push this letter into the letterGuessed array
 
-  //if the letter is present in the word then push it into the placeholder array
-  //change the class of the button pressed to btn-success
-
-  //write the letter to the dom in the correct location
-  //if the letter isn't in the word then change the button class to btn-danger
-  //switch to the next image in the images array
-
-  // -1 remaining guesses
-  // once zero guesses remaining then you lose
-  //once the placeholder array matches the pickedWord you win
-
-  // if (guessedLetters.indexOf(letterGuessed) === -1)
   if (guessedLetters.indexOf(letterGuessed) === -1) {
     // Run rest of game
     // push guessedLetter into guessedLetters array
@@ -134,39 +121,40 @@ function checkGuess(button) {
     if (guesses === 0) {
       losses++;
       document.getElementById("losses").textContent = losses;
-      // you lose
-    }
-    if (pickedWordPlaceholder.join("") === pickedWordArray.join("")) {
-      wins++;
-      document.getElementById("wins").textContent = wins;
-      // you win
-    }
-    if (guesses === 5) {
-      document.getElementById("hangman-image").src =
-        "./assets/images/hangman-1.png";
-    }
-    if (guesses === 4) {
-      document.getElementById("hangman-image").src =
-        "./assets/images/hangman-2.png";
-    }
-    if (guesses === 3) {
-      document.getElementById("hangman-image").src =
-        "./assets/images/hangman-3.png";
-    }
-    if (guesses === 2) {
-      document.getElementById("hangman-image").src =
-        "./assets/images/hangman-4.png";
-    }
-    if (guesses === 1) {
-      document.getElementById("hangman-image").src =
-        "./assets/images/hangman-5.png";
-    }
-    if (guesses === 0) {
-      document.getElementById("hangman-image").src =
-        "./assets/images/hangman-6.png";
     }
   }
+  if (pickedWordPlaceholder.join("") === pickedWordArray.join("")) {
+    wins++;
+    document.getElementById("wins").textContent = wins;
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-win.png";
+  }
+  if (guesses === 5 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-1.png";
+  }
+  if (guesses === 4 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-2.png";
+  }
+  if (guesses === 3 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-3.png";
+  }
+  if (guesses === 2 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-4.png";
+  }
+  if (guesses === 1 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-5.png";
+  }
+  if (guesses === 0 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+    document.getElementById("hangman-image").src =
+      "./assets/images/hangman-6.png";
+  }
 }
+
 
 //----------------------------------------
 
@@ -180,6 +168,7 @@ function resetButtons() {
 }
 // reset GAME FUNCTION
 document.getElementById("reset-button").addEventListener("click", newGame, resetGame);
+
 function resetGame() {
   wins = 0;
   losses = 0;
