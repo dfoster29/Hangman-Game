@@ -22,7 +22,12 @@ var wordBank = [
   "newfoundland",
   "malamute",
   "hound",
-  "terrier"
+  "terrier",
+  "doberman",
+  "poodle",
+  "dalmation",
+  "greyhound",
+  "sheepdog"
 ];
 
 // any references to HTML DOM Elements (reset button, area for writing stats, letter blanks)
@@ -34,6 +39,7 @@ var pickedWordPlaceholder = [];
 var guessedLetters = [];
 var pickedWordArray = [];
 var pickedWord = "";
+
 
 // NEW GAME FUNCTION
 document.getElementById("start-button").addEventListener("click", newGame);
@@ -97,7 +103,6 @@ function checkGuess(button) {
   //the letter guessed is equal to the text content of the button clicked
   var letterGuessed = button.textContent.toLowerCase();
 
-
   if (guessedLetters.indexOf(letterGuessed) === -1) {
     // Run rest of game
     // push guessedLetter into guessedLetters array
@@ -117,7 +122,9 @@ function checkGuess(button) {
       guesses--;
       document.getElementById("guesses-remaining").textContent = guesses;
     }
-    document.getElementById("picked-word").innerHTML = pickedWordPlaceholder.join(" ");
+    document.getElementById(
+      "picked-word"
+    ).innerHTML = pickedWordPlaceholder.join(" ");
     if (guesses === 0) {
       losses++;
       document.getElementById("losses").textContent = losses;
@@ -129,32 +136,49 @@ function checkGuess(button) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-win.png";
   }
-  if (guesses === 5 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+  if (
+    guesses === 5 &&
+    pickedWordPlaceholder.join("") != pickedWordArray.join("")
+  ) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-1.png";
   }
-  if (guesses === 4 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+  if (
+    guesses === 4 &&
+    pickedWordPlaceholder.join("") != pickedWordArray.join("")
+  ) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-2.png";
   }
-  if (guesses === 3 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+  if (
+    guesses === 3 &&
+    pickedWordPlaceholder.join("") != pickedWordArray.join("")
+  ) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-3.png";
   }
-  if (guesses === 2 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+  if (
+    guesses === 2 &&
+    pickedWordPlaceholder.join("") != pickedWordArray.join("")
+  ) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-4.png";
   }
-  if (guesses === 1 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+  if (
+    guesses === 1 &&
+    pickedWordPlaceholder.join("") != pickedWordArray.join("")
+  ) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-5.png";
   }
-  if (guesses === 0 && pickedWordPlaceholder.join("") != pickedWordArray.join("")) {
+  if (
+    guesses === 0 &&
+    pickedWordPlaceholder.join("") != pickedWordArray.join("")
+  ) {
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-6.png";
   }
 }
-
 
 //----------------------------------------
 
@@ -167,7 +191,9 @@ function resetButtons() {
   }
 }
 // reset GAME FUNCTION
-document.getElementById("reset-button").addEventListener("click", newGame, resetGame);
+document
+  .getElementById("reset-button")
+  .addEventListener("click", newGame, resetGame);
 
 function resetGame() {
   wins = 0;
@@ -176,3 +202,22 @@ function resetGame() {
   document.getElementById("losses").textContent = losses;
 }
 newGame();
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    var letterButtons = document.getElementsByClassName("button-class");
+    //console.log("hit");
+    for (var i = 0; i < letterButtons.length; i++) {
+      letterButtons[i].classList.remove("btn-lg")};
+      
+  } else {
+    var letterButtons = document.getElementsByClassName("button-class");
+    //console.log("hit");
+    for (var i = 0; i < letterButtons.length; i++) {
+      letterButtons[i].classList.add("btn-lg")};
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
