@@ -208,14 +208,14 @@ function myFunction(x) {
     var letterButtons = document.getElementsByClassName("button-class");
     //console.log("hit");
     for (var i = 0; i < letterButtons.length; i++) {
-      letterButtons[i].classList.remove("btn-lg")};
+      letterButtons[i].classList.remove("btn-lg");
       letterButtons[i].classList.add("btn-sm")};
       
   } else {
     var letterButtons = document.getElementsByClassName("button-class");
     //console.log("hit");
     for (var i = 0; i < letterButtons.length; i++) {
-      letterButtons[i].classList.add("btn-lg")};
+      letterButtons[i].classList.add("btn-lg");
       letterButtons[i].classList.remove("btn-sm")};
   }
 }
