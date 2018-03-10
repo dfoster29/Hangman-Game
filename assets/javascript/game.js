@@ -39,6 +39,7 @@ var pickedWordPlaceholder = [];
 var guessedLetters = [];
 var pickedWordArray = [];
 var pickedWord = "";
+var gameRunning = false;
 
 
 // NEW GAME FUNCTION
@@ -46,6 +47,7 @@ document.getElementById("start-button").addEventListener("click", newGame);
 
 function newGame() {
   // reset guessesLeft to 6
+  gameRunning = true;
   document.getElementById("hangman-image").src =
     "./assets/images/hangman-start.png";
   guesses = 6;
@@ -88,8 +90,10 @@ buttonRef.addEventListener("click", function (event) {
   // console.dir(event.target);
   var buttonClicked = event.target;
   // execute checkGuess function and pass in the button you selected (will be handled above)
-  if (buttonClicked.nodeName === "BUTTON") {
+  if (buttonClicked.nodeName === "BUTTON" && gameRunning) {
     checkGuess(buttonClicked);
+  } else {
+    alert("You may have clicked a wrong button OR the game isn't active!");
   }
 });
 
@@ -127,11 +131,13 @@ function checkGuess(button) {
     ).innerHTML = pickedWordPlaceholder.join(" ");
     if (guesses === 0) {
       losses++;
+      gameRunning = false;
       document.getElementById("losses").textContent = losses;
     }
   }
   if (pickedWordPlaceholder.join("") === pickedWordArray.join("")) {
     wins++;
+    gameRunning = false;
     document.getElementById("wins").textContent = wins;
     document.getElementById("hangman-image").src =
       "./assets/images/hangman-win.png";
@@ -220,6 +226,6 @@ function myFunction(x) {
   }
 }
 
-var x = window.matchMedia("(max-width: 700px)")
+var x = window.matchMedia("(max-width: 768px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
